@@ -73,13 +73,17 @@ select * from employees where (sal*12)-1000>20000;
 -- 9. WAQTD employee names and salary after increasing salary by 20%.
 select ename,(sal)+(sal*20/100) Inc from employees;
 -- 10. WAQTD employee names and salary after decreasing salary by 10%.
-select ename,(sal)-(sal*20/100) Inc from employees;
+select ename, sal-(sal*10/100) Dec from employees;
+
 -- 11. WAQTD employee details whose annual salary after a 15% increment is greater than ₹40,000.
-select * from employees where (sal)+(sal*15/100)>40000;
+select * from employees where ((sal+(sal*15/100))*12) > 40000;
+
 -- 12. WAQTD employee names along with annual salary, quarterly salary, and half-yearly salary.
-select ename, sal*12 Annual, sal*3 Quaterly, sal*6 halfyearly from employees;
+select ename, sal*12 Annual, sal*3 Quarterly, sal*6 HalfYearly from employees;
+
 -- 13. WAQTD employee details whose annual salary is between ₹20,000 and ₹40,000.
-select * from employees where sal*12 between 20,000 and 40000
+select * from employees where sal*12 between 20000 and 40000;
+
 -- 14. WAQTD employee names whose salary after adding ₹1000 becomes greater than ₹3000.
-select ename from employee where sal+1000>3000;
+select ename from employees where sal+1000 > 3000;
 
